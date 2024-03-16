@@ -13,6 +13,7 @@ const registerNgo = require('./routes/registerNgo');
 const listDonation = require('./routes/listDonation');
 const getAllDonors = require('./routes/getAllDonors');
 const getAllNgos = require('./routes/getAllNgos');
+const acceptListing = require('./routes/acceptListing');
 
 app.use(signin);
 app.use(signup);
@@ -21,6 +22,7 @@ app.use(registerNgo);
 app.use(listDonation);
 app.use(getAllDonors);
 app.use(getAllNgos);
+app.use(acceptListing)
 
 
 

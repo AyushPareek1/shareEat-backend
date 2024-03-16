@@ -14,16 +14,25 @@ const donorListingsSchema = new mongoose.Schema({
         default: false
     },
     listingTime: {
-        type: Date,
-        default: Date.now
+        type: String,
+        required: true
     },
     shelfLife: {
-        type: Number,
+        type: String,
         required: true
     },
     gift: {
         type: Boolean,
         required: true
+    },
+    price :{
+        type: String,
+        // required: true
+    
+    },
+    active : {
+        type: Boolean,
+        default : true
     }
 });
 

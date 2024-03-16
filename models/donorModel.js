@@ -32,6 +32,7 @@ const donorSchema = new mongoose.Schema({
     },
     listings: {
         type: [mongoose.Schema.Types.ObjectId],
+        default :[],
         ref: 'DonorListing'
     }
 });

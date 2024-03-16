@@ -11,12 +11,16 @@ const signup = require('./routes/signup');
 const registerDonor = require('./routes/registerDonor');
 const registerNgo = require('./routes/registerNgo');
 const listDonation = require('./routes/listDonation');
+const getAllDonors = require('./routes/getAllDonors');
+const getAllNgos = require('./routes/getAllNgos');
 
 app.use(signin);
 app.use(signup);
 app.use(registerDonor);
 app.use(registerNgo);
 app.use(listDonation);
+app.use(getAllDonors);
+app.use(getAllNgos);
 
 
 

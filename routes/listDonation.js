@@ -5,8 +5,9 @@ const donorModel = require('../models/donorModel');
 const router = express.Router();
 
 router.post('/listDonation', async (req, res) => {
+    console.log(req.body);
     try {
-        const { location, foodType, diabetic, listingTime, shelfLife, gift } = req.body;
+        const { location, foodType, diabetic, listingTime, shelfLife, gift,price } = req.body;
 
         const newListing = new donorListingSchema({
             location,
@@ -14,7 +15,8 @@ router.post('/listDonation', async (req, res) => {
             diabetic,
             listingTime,
             shelfLife,
-            gift
+            gift,
+            price
         });
 
         await newListing.save();
@@ -22,7 +24,7 @@ router.post('/listDonation', async (req, res) => {
         
         const donor = await donorModel.findOne({ email: req.body.email });
 
-       
+      
         donor.listings.push(newListing._id);
 
 
@@ -30,6 +32,7 @@ router.post('/listDonation', async (req, res) => {
 
         res.status(200).json({ message: 'Listing created successfully' });
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'An error occurred while creating the listing' });
     }
 });

@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const connectionURL =
-  process.env.MONGO_URL || "mongodb://127.0.0.1:27017/marvaadi";
+  "mongodb+srv://ayushpareek873:RD0qVzJkuBLGdsbB@cluster1.5tmgm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1";
 mongoose.connect(connectionURL, {
   // useNewUrlParser: true,
   // useUnifiedTopology: true,
